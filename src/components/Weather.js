@@ -3,6 +3,8 @@ import WeatherInfo from './WeatherInfo'
 
 import './Weather.css';
 
+const apiKey = "8ddceeacaf8b95fe943c88fc8389dee0";
+
 const Weather = () => {
   const [city, setCity] = useState(undefined);
   const [country, setCountry] = useState(undefined);
@@ -22,7 +24,7 @@ const Weather = () => {
     if(city && country){
       try {
         const apiCall = await fetch(
-          `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${process.env.REACT_APP_WEATHER_APIKEY}&units=metric`
+          `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}&units=metric`
         );
         const { main, sys, name, weather, timezone, wind } = await apiCall.json();
         setTemperature(main.temp);
