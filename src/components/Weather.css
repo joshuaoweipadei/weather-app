@@ -1,0 +1,128 @@
+.weather {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.weather__container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px;
+  margin: 0 10px;
+  background: #88074e;
+  border-radius: 2px;
+}
+
+.weather__header {
+  margin-bottom: 40px;
+}
+
+.weather__header > h1 {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.weather__header > h3 {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.weather__form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  max-width: 330px;
+  width: 100%;
+}
+
+.weather__form > .input__row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 16px;
+}
+@media screen and (max-width: 425px){
+}
+
+.weather__form > .input__row > input {
+  width: 100%;
+  padding: 14px 10px;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  border-bottom: none;
+  border-radius: 2px;
+  color: #252525;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+}
+
+.weather__form > .input__row > input::placeholder {
+  color: #a1a0a0;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.weather__form > .input__row > button {
+  padding: 14px 0;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  border-radius: 2px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background: #2326df;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.weather__form > .input__row > button:hover {
+  background: #0d0fb1;
+}
+
+
+/* Report  */
+.weather__details {
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
+
+.weather__key {
+  font-family: 'Work Sans', sans-serif;
+  color: #989aec;
+  border-bottom: solid 2px rgba(255, 255, 255, 0.06);
+  padding: 20px 0 20px 0;
+  font-weight: 500;
+  font-size: 20px;
+}
+@media screen and (max-width: 425px) {
+  .weather__key {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+  }
+}
+
+.weather__key:last-child {
+  border: 0;
+}
+
+.weather__value {
+  font-family: 'Work Sans', sans-serif;
+  color: #fff;
+  font-weight: 400;
+}
+
+.weather__error {
+  color: #eca1a1;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
