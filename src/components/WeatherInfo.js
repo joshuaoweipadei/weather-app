@@ -24,6 +24,8 @@ const WeatherInfo = ({ city, country, temperature, humidity, seaLevel, descripti
 
   return (
     <div className="weather__details">
+      {error && <p className="weather__error">{error}</p>}
+      
       {city && country && (
         <p className="weather__key">
           Location:{" "} 
@@ -71,7 +73,6 @@ const WeatherInfo = ({ city, country, temperature, humidity, seaLevel, descripti
         </p>
       )}
 
-      {error && <p className="weather__error">{error}</p>}
     </div>
   )
 }

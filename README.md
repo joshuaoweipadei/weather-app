@@ -13,3 +13,5 @@ npm start
 ```
 
 This will start the react weather app on your computer on localhost:3000:
+
+See [Live Demo](https://joshie-weather-app.netlify.app/)

@@ -16,6 +16,7 @@ const Weather = () => {
   const [timezone, setTimezone] = useState(undefined);
   const [wind, setWind] = useState(undefined);
   const [seaLevel, setSeaLevel] = useState(undefined);
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleWeather = async (e) => {
     e.preventDefault();
@@ -23,6 +24,7 @@ const Weather = () => {
     const country = e.currentTarget.elements.country.value;
     if(city && country){
       try {
+        setIsLoading(true);
         const apiCall = await fetch(
           `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}&units=metric`
         );
@@ -37,8 +39,11 @@ const Weather = () => {
         setTimezone(timezone)
         setWind(wind)
         setError('');
+        setIsLoading(false);
 
       } catch (err) {
+        setIsLoading(false);
+        setError('Weather report can not be found on your chosen location');
         console.log(err.message);
       }
     } else {
@@ -66,7 +71,7 @@ const Weather = () => {
           <div className="input__row">
             <input type="text" name="city" placeholder="City..." />
             <input type="text" name="country" placeholder="Country..." />
-            <button className="form-button">Get Weather Report</button>
+            <button className="form-button" disabled={isLoading}>{isLoading ? 'Loading. . .' :  'Get Weather Report'}</button>
           </div>
         </form>
         <WeatherInfo
